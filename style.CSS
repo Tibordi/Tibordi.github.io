@@ -1,0 +1,914 @@
+
+*{
+     font-family: 'Montserrat';
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+:root{
+    /* ======= Colors ====== */
+
+    --body-color:  #E4E9F7;
+    --sidebar-color: #ffffff;
+    --primary-color: #c09d5e;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+    --text-color-Content: #2c2c2c;
+
+    /* ======= trasiciones ====== */
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+body{
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-03);
+}
+
+body.dark{
+    /* ======= Colors ====== */
+
+    --body-color:  #1b1b1b;
+    --sidebar-color: #242424;
+    --primary-color: #c09d5e;
+    --primary-color-dark: #131313;
+    --toggle-color: #ddd;
+    --text-color: #dbdbdb;
+    --text-color-Content: #dbdbdb;
+}
+
+/* ======= Resuable CSS ====== */
+
+.sidebar .text{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar .image{
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* ======= Sidebar ====== */
+
+.sidebar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+}
+
+.sidebar.close{
+    width: 88px;
+}
+
+.sidebar.close .text{
+    opacity: 0;
+}
+
+.sidebar li .space{
+    height: 10px;
+}
+
+.sidebar li{
+    height: 45px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+.sidebar li .icon{
+    color: var(--text-color);
+    transition: var(--tran-03);
+    font-size: 20px;
+}
+.sidebar li .text{
+    color: var(--text-color);
+    transition: var(--tran-03);
+    font-size: 15px;
+}
+
+.sidebar header{
+    position: relative;
+}
+
+.sidebar .image-text img{
+    width: 40px;
+    border-radius: 6px;
+    background: var(--primary-color);
+}
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name{
+    font-weight: 600;
+}
+
+.header-text .profession{
+    margin-top: -2px;
+}
+
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translatey(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 25px;
+    transition: var(--tran-05);
+}
+
+.sidebar.close header .toggle{
+    transform: translateY(-50%);
+}
+
+body.dark.close .sidebar header .toggle{
+    transform: translateY(50%);
+    color: var(--text-color);
+}
+
+.sidebar .search-box{
+    background: var(--primary-color-light);
+    border-radius: 10px;
+}
+
+.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+}
+
+.sidebar li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+    z-index: 100;
+}
+
+.sidebar li a:hover{
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+    color: var(--primary-color-light);
+}
+
+body.dark.sidebar li a:hover .icon,
+body.dark.sidebar li a:hover .text{
+    color: var(--primary-color-light);
+}
+
+.sidebar .menu-bar{
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar .mode{
+    position: relative;
+    border-radius: 20px;
+    background: var(--sidebar-color);
+}
+
+.menu-bar .mode .moon-sun{
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+
+}
+
+.menu-bar .mode i{
+    position: absolute;
+    transition: var(--tran-03);
+}
+
+.menu-bar .mode i.sun{
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun{
+    opacity: 1;
+}
+body.dark .menu-bar .mode i.moon{
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch{
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch{
+    position: relative;
+    height: 20px;
+    width: 44px;
+    border-radius: 24px;
+    background: var(--toggle-color);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    transition: var(--tran-03);
+}
+
+body.dark .switch::before{
+    left: 26px;
+}
+
+.section{
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.section .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 8px 40px;
+}
+
+.sidebar.close ~ .section{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.division{
+  background: var(--primary-color);
+  width: 100%;
+  height: 8px;
+  margin: 0 auto 30px auto;
+  border-radius: 10px;
+}
+
+/* Sección de inicio */
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+}
+
+/* Contenedor general */
+.inicio-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sección de inicio y contenedor general */
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+  }
+  
+  .inicio-container {
+    width: 100%;
+    /* Si quieres un margen interno: */
+    padding: 0 20px;
+    box-sizing: border-box;
+    /* Elimina o comenta el max-width */
+    /* max-width: 900px; */
+    margin: 0; /* Alinéalo a la izquierda, ya que la sección se posiciona según el sidebar */
+  }
+  
+  
+  /* Título centrado */
+  .inicio-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+  }
+  
+  /* Contenedor del carrusel */
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+  }  
+  
+  /* Pseudo-elemento para el borde izquierdo */
+  .carousel-container::before,
+  .carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 25%; /* Ajusta el ancho del efecto según necesites */
+    height: 100%;
+    pointer-events: none; /* Evita que bloqueen la interactividad */
+    z-index: 2;
+  }
+  
+  .carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--body-color), rgba(255,255,255,0));
+  }
+  
+  .carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--body-color), rgba(255,255,255,0));
+  }
+  
+  
+  /* Carrusel: se disponen las imágenes en fila */
+  .carousel {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  
+  /* Cada imagen ocupará 1/3 del contenedor visible */
+  .carousel img {
+    flex-shrink: 0;
+    width: calc(100% / 3);
+    height: auto;
+    object-fit: cover;
+    padding: 5px;
+    border-radius: 15px;
+  }
+  
+  
+
+
+
+
+                        /* Sección ChefChat */
+#chefchat {
+  padding: 15px 15px;
+  width: 90%;
+}
+
+/* Contenedor principal */
+.chefchat-container {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* Título centrado */
+.chefchat-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Distribución en dos columnas */
+.chefchat-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* Columna izquierda: Descripción del plato */
+.dish-description {
+  flex: 0 0 40%;
+  background: var(--sidebar-color);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--text-color-Content);
+  font-size: 14px;
+}
+
+.dish-title {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.dish-description img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+/* Columna derecha: Información & Opciones + Chat */
+.chefchat-sidebar {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Información & Opciones */
+.info-options {
+  background: var(--sidebar-color);
+  padding: 15px;
+  border-radius: 10px;
+  color: var(--text-color-Content);
+}
+
+.sidebar-title {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.sidebar-options {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.sidebar-options li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--primary-color);
+  cursor: pointer;
+  transition: var(--tran-02);
+}
+
+.sidebar-options li:hover {
+  color: var(--primary-color);
+}
+
+.sidebar-results {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Chat interactivo debajo de Información & Opciones */
+.chat-main {
+  background-color: var(--sidebar-color);
+  padding: 15px;
+  border-radius: 10px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mensajes del chat */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+  border: 1px solid var(--body-color);
+  border-radius: 5px;
+  background: var(--body-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 14px;
+  color: var(--text-color-Content);
+}
+
+.message.user {
+  background-color: var(--primary-color);
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.message.ai {
+  background: var(--sidebar-color);
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+/* Barra de entrada */
+.chat-input {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+}
+
+.chat-input input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--body-color);
+  background: var(--body-color);
+  border-radius: 20px;
+  outline: none;
+  transition: var(--tran-03);
+}
+
+.chat-input input[type="text"]:focus {
+  border-color: var(--primary-color);
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background: var(--primary-color);
+  border: none;
+  color: var(--toggle-color);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--tran-03);
+}
+
+.chat-input button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+.chat-input .icon{
+  font-size: 25px;
+}
+
+
+
+
+
+                        /* Contenedor general para la sección Menú */
+.menus-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.menus-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+/* Catálogo de platos en formato grid */
+.menu-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Estilo para cada tarjeta del plato */
+.menu-item {
+  background: var(--sidebar-color);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.menu-item-title {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--primary-color);
+}
+
+.menu-item-desc {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin: 5px 0;
+}
+
+.menu-item-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Modal: vista ampliada del plato */
+.menu-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none; /* Oculto por defecto */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu-modal-content {
+  background: var(--sidebar-color);
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+}
+
+.menu-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.menu-modal-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.menu-modal-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.menu-modal-description {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.menu-modal-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Encabezado (Banner) del Menú con imagen de fondo superpuesta */
+.menu-header {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 15px auto; /* Centrado y con margen inferior */
+  aspect-ratio:  3000 / 650; /* Garantiza la proporción (1400x3000) o ajusta según necesites */
+  /* Establece la imagen de fondo: cambia la URL por la de tu imagen */
+  background: url('Imagenes/Recursos/Encabezado Menus.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 30px;
+}
+
+/* Posiciona el título sobre la imagen */
+.menu-header .menus-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color); /* O el color que prefieras para el texto */
+  font-size: 3rem;  /* Ajusta el tamaño según necesites */
+  z-index: 2;
+  margin: 0;
+}
+
+body.dark .menu-header {
+  background: url('Imagenes/Recursos/Encabezado\ MenusD.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+                       /* Contenedor general de Reservaciones */
+.reservaciones-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* General para cada fila */
+.res-row {
+  margin-bottom: 30px;
+}
+
+/* --- Fila 1: Descripción --- */
+.description-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.description-text {
+  flex: 0 0 70%;
+  text-align: left;
+  color: var(--text-color-Content);
+}
+.description-text h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.description-box {
+  flex: 0 0 30%;
+  background: var(--text-color); /* Gris oscuro */
+  height: 200px;   /* Ajusta la altura según necesites */
+  border-radius: 10px;
+}
+
+/* --- Fila 2: Selección de Reservación y Ambientes --- */
+.selection-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: var(--text-color-Content);
+}
+.selection-options{
+  flex: 1 1 30%;
+  padding: 15px;
+  border-radius: 15px;
+  color: var(--text-color-Content);
+}
+.ambientes-options {
+  flex: 1 1 45%;
+  background: var(--sidebar-color);
+  padding: 15px;
+  border-radius: 10px;
+}
+.selection-options h3,
+.ambientes-options h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.form-group input[type="time"],
+.form-group input[type="number"],
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--body-color);
+  border-radius: 4px;
+}
+.form-group input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+/* Ambientes: cada item con imagen, texto y checkbox */
+.ambiente-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.ambiente-item img {
+  width: 600px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.ambiente-item label {
+  font-size: 0.9rem;
+}
+
+/* --- Fila 3: Factura --- */
+.invoice-row {
+  background: var(--sidebar-color);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+}
+.invoice-row h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.invoice-row p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* --- Fila 4: Pago Móvil --- */
+.payment-row {
+  background: var(--sidebar-color);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+}
+.payment-row h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.payment-form .form-group {
+  margin-bottom: 15px;
+}
+.payment-form button {
+  padding: 10px 20px;
+  background: var(--primary-color);
+  border: none;
+  color: var(--sidebar-color);
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.payment-form button:hover {
+  background: darken(var(--primary-color), 10%);
+}
+
+/* Encabezado (Banner) del Menú con imagen de fondo superpuesta */
+.reservaciones-header {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 15px auto; /* Centrado y con margen inferior */
+  aspect-ratio:  3000 / 650; /* Garantiza la proporción (1400x3000) o ajusta según necesites */
+  /* Establece la imagen de fondo: cambia la URL por la de tu imagen */
+  background: url('Imagenes/Recursos/Encabezado\ Reservacion.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 30px;
+}
+
+/* Posiciona el título sobre la imagen */
+.reservaciones-header .reservaciones-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color); /* O el color que prefieras para el texto */
+  font-size: 3rem;  /* Ajusta el tamaño según necesites */
+  z-index: 2;
+  margin: 0;
+}
+
+body.dark .reservaciones-header {
+  background: url('Imagenes/Recursos/Encabezado\ ReservacionD.jpg') no-repeat center center;
+  background-size: cover;
+}

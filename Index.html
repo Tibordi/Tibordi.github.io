@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!----=========== CSS ===========---->
+    <link rel="stylesheet" href="style.CSS">
+
+    <!----=========== Icons ===========---->
+
+    <title>Dashboard Sidebar Menu | Dark-Ligh Mode</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="Logo.png" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Bruf</span>
+                    <span class="profession">Restaurant</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search-alt-2 icon' ></i>
+                    <input type="Search" placeholder="Buscar...">
+                </li>
+                <li class="space">
+                    
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#Inicio" data-section="inicio"> 
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#menus" data-section="menus">
+                            <i class='bx bx-food-menu icon' ></i>
+                            <span class="text nav-text">Menus</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#reservaciones" data-section="reservaciones">
+                            <i class='bx bxs-book-content icon' ></i>
+                            <span class="text nav-text">Reservaciones</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#chefchat" data-section="chefchat">
+                            <i class='bx bx-message-dots icon'></i>
+                            <span class="text nav-text">ChefChat</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#notificaciones" data-section="notificaciones">
+                            <i class='bx bx-bell icon' ></i>
+                            <span class="text nav-text">Notificaciones</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#pedidos" data-section="pedidos">
+                            <i class='bx bx-cart-alt icon' ></i>
+                            <span class="text nav-text">Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#noticias" data-section="noticias">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Noticias</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#logout">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Cerrar sesion</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class='bx bx-moon icon moon' ></i>
+                        <i class='bx bx-sun icon sun' ></i>
+                    </div>
+                    <span class="mode-text text">Modo Oscuro</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+
+        </div>
+    </nav>
+
+    <section id="inicio" class="section">
+        <div class="inicio-container">
+          <h1 class="inicio-title">Bienvenido a Bruf</h1>
+          <div class="carousel-container">
+            <div class="carousel">
+              <img src="imagenes/img1.jpg" alt="Imagen 1">
+              <img src="imagenes/img2.jpg" alt="Imagen 2">
+              <img src="imagenes/img3.jpg" alt="Imagen 3">
+              <img src="imagenes/img4.jpg" alt="Imagen 4">
+              <img src="imagenes/img5.jpg" alt="Imagen 5">
+              <!-- Clones para el loop infinito -->
+              <img src="imagenes/img1.jpg" alt="Imagen 1 Clone">
+              <img src="imagenes/img2.jpg" alt="Imagen 2 Clone">
+            </div>
+          </div>
+        </div>
+    </section>
+      
+    
+    
+    <section id="menus" class="section">
+        <div class="menus-container">
+            <div class="menu-header">
+                <h1 class="menus-title">Menú</h1>
+            </div>
+            
+            <div class="division"></div>
+            
+            <!-- Catálogo de platos -->
+            <div class="menu-catalog">
+            <!-- Ejemplo de un item del menú -->
+            <div
+                class="menu-item"
+                data-title="Pate de Atún Vegetal"
+                data-description="Pate de atún vegetal con especias y hierbas aromáticas, acompañado de tostadas."
+                data-price="$3.50"
+                data-image="pate-atun.jpg"
+            >
+                <img src="pate-atun.jpg" alt="Pate de Atún Vegetal" />
+                <h2 class="menu-item-title">Pate de Atún Vegetal</h2>
+                <p class="menu-item-desc">Pate de atún vegetal con especias y hierbas.</p>
+                <span class="menu-item-price">$3.50</span>
+            </div>
+
+            <div
+                class="menu-item"
+                data-title="Hamburguesa Vegetal"
+                data-description="Hamburguesa vegetal con lechuga, tomate y cebolla caramelizada, servida con papas fritas."
+                data-price="$5.00"
+                data-image="hamburguesa-vegetal.jpg"
+            >
+                <img src="hamburguesa-vegetal.jpg" alt="Hamburguesa Vegetal" />
+                <h2 class="menu-item-title">Hamburguesa Vegetal</h2>
+                <p class="menu-item-desc">Hamburguesa con vegetales frescos y papas fritas.</p>
+                <span class="menu-item-price">$5.00</span>
+            </div>
+
+            <div
+                class="menu-item"
+                data-title="Hamburguesa Vegetal"
+                data-description="Hamburguesa vegetal con lechuga, tomate y cebolla caramelizada, servida con papas fritas."
+                data-price="$5.00"
+                data-image="hamburguesa-vegetal.jpg"
+            >
+                <img src="hamburguesa-vegetal.jpg" alt="Hamburguesa Vegetal" />
+                <h2 class="menu-item-title">Hamburguesa Vegetal</h2>
+                <p class="menu-item-desc">Hamburguesa con vegetales frescos y papas fritas.</p>
+                <span class="menu-item-price">$5.00</span>
+            </div>
+
+            <div
+                class="menu-item"
+                data-title="Hamburguesa Vegetal"
+                data-description="Hamburguesa vegetal con lechuga, tomate y cebolla caramelizada, servida con papas fritas."
+                data-price="$5.00"
+                data-image="hamburguesa-vegetal.jpg"
+            >
+                <img src="hamburguesa-vegetal.jpg" alt="Hamburguesa Vegetal" />
+                <h2 class="menu-item-title">Hamburguesa Vegetal</h2>
+                <p class="menu-item-desc">Hamburguesa con vegetales frescos y papas fritas.</p>
+                <span class="menu-item-price">$5.00</span>
+            </div>
+
+            <!-- Agrega más items del menú de forma similar -->
+            </div>
+        </div>
+
+        <!-- Modal para la vista ampliada del plato -->
+        <div id="menu-modal" class="menu-modal">
+            <div class="menu-modal-content">
+            <span class="menu-modal-close">&times;</span>
+            <img class="menu-modal-img" src="" alt="Detalle del Plato" />
+            <h2 class="menu-modal-title"></h2>
+            <p class="menu-modal-description"></p>
+            <span class="menu-modal-price"></span>
+            </div>
+        </div>
+        </section>
+
+    
+    <section id="reservaciones" class="section">
+        <div class="reservaciones-container">
+
+            <div class="reservaciones-header">
+                <h1 class="reservaciones-title">Reservaciones</h1>
+            </div>
+
+            <div class="division"></div>
+
+            <!-- Fila 1: Descripción del restaurant y cuadro gris al costado -->
+            <div class="res-row description-row">
+            <div class="description-text">
+                <h2>Acerca de nuestro Restaurante</h2>
+                <p>
+                Fundado en 1985, Bruf Restaurant ha sido sinónimo de innovación y tradición. 
+                Con una mezcla de sabores internacionales y técnicas locales, ofrecemos una experiencia única que refleja nuestra historia y pasión por la cocina.
+                </p>
+            </div>
+            <div class="description-box">
+                <!-- Este cuadro de fondo gris oscuro puede contener imágenes o información adicional -->
+            </div>
+            </div>
+
+            <!-- Fila 2: Opciones de reservación y selección de ambiente -->
+            <div class="res-row selection-row">
+            <!-- Columna izquierda: Opciones de reservación -->
+            <div class="selection-options">
+                <h3>Datos de Reservación</h3>
+                <div class="form-group">
+                <label for="horaReservacion">Hora de Reservación:</label>
+                <input type="time" id="horaReservacion" name="horaReservacion" required>
+                </div>
+                <div class="form-group">
+                <label for="numeroMesas">Número de Mesas:</label>
+                <input type="number" id="numeroMesas" name="numeroMesas" min="1" required>
+                </div>
+                <div class="form-group">
+                <label for="numeroPersonas">Número de Personas:</label>
+                <input type="number" id="numeroPersonas" name="numeroPersonas" min="1" required>
+                </div>
+                <div class="form-group">
+                <input type="checkbox" id="asistiranNinos" name="asistiranNinos">
+                <label for="asistiranNinos">Asistirán Niños</label>
+                </div>
+                <div class="form-group">
+                <label for="numeroNinos">Número de Niños:</label>
+                <input type="number" id="numeroNinos" name="numeroNinos" min="0" disabled>
+                </div>
+            </div>
+            <!-- Columna derecha: Selección de ambiente -->
+            <div class="ambientes-options">
+                <h3>Selecciona el Ambiente</h3>
+                <div class="ambiente-item">
+                <img src="Imagenes/Recursos/Interior.jpg" alt="Interior">
+                <label>Interior</label>
+                <input type="checkbox" name="ambiente" value="Interior">
+                </div>
+                <div class="ambiente-item">
+                <img src="Imagenes/Recursos/Balcon.png" alt="Balcón">
+                <label>Balcón</label>
+                <input type="checkbox" name="ambiente" value="Balcon">
+                </div>
+                <div class="ambiente-item">
+                <img src="Imagenes/Recursos/Bruf.png" alt="Bruf">
+                <label>Bruf</label>
+                <input type="checkbox" name="ambiente" value="Bruf">
+                </div>
+            </div>
+            </div>
+
+            <!-- Fila 3: Factura de la Reservación -->
+            <div class="res-row invoice-row">
+            <h3>Detalle de Costos</h3>
+            <p>Costo por Personas (10 USD c/u): <span id="costoPersonas">$0.00</span></p>
+            <p>Costo por Mesas (30 USD c/u): <span id="costoMesas">$0.00</span></p>
+            <p>Costo por Ambiente: <span id="costoAmbiente">$0.00</span></p>
+            <hr>
+            <p>Total: <span id="totalCosto">$0.00</span></p>
+            </div>
+
+            <!-- Fila 4: Datos de Pago Móvil -->
+            <div class="res-row payment-row">
+            <h3>Pago Móvil</h3>
+            <div class="payment-form">
+                <div class="form-group">
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                <label for="cedula">Número de Cédula:</label>
+                <input type="text" id="cedula" name="cedula" required>
+                </div>
+                <div class="form-group">
+                <label for="refPago">Número de Ref del Pago:</label>
+                <input type="text" id="refPago" name="refPago" required>
+                </div>
+                <div class="form-group">
+                <label for="reservante">Nombre del Reservante:</label>
+                <input type="text" id="reservante" name="reservante" required>
+                </div>
+                <button id="btnReservacion">Realizar Reservación</button>
+            </div>
+            </div>
+        </div>
+        </section>
+
+
+    <section id="chefchat" class="section">
+        <div class="chefchat-container">
+            <h1 class="chefchat-title">ChefChat</h1>
+
+            <div class="chefchat-wrapper">
+            
+            <!-- Columna izquierda: descripción del plato -->
+            <div class="dish-description">
+                <h2 class="dish-title">Plato del Día</h2>
+                <img src="plato.jpg" alt="Imagen del plato">
+                <p class="dish-info">Este plato exquisito combina ingredientes frescos y sabores únicos. Perfecto para una experiencia gastronómica inolvidable.</p>
+            </div>
+
+            <!-- Columna derecha: información, opciones y chat -->
+            <div class="chefchat-sidebar">
+                
+                <!-- Información & Opciones -->
+                <div class="info-options">
+                <h2 class="sidebar-title">Información & Opciones</h2>
+                <ul class="sidebar-options">
+                    <li>Recetar</li>
+                    <li>Hacer Pedido</li>
+                    <li>Más Información</li>
+                </ul>
+                <div class="sidebar-results">
+                    <p>Aquí aparecerán resultados e información relevante.</p>
+                </div>
+                </div>
+
+                <!-- Chat interactivo -->
+                <div class="chat-main">
+                <div class="chat-messages">
+                    <!-- Mensajes de ejemplo -->
+                    <p class="message user">Hola, ¿puedes sugerirme una receta?</p>
+                    <p class="message ai">¡Claro! He encontrado algunas opciones que podrían interesarte.</p>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Escribe tu mensaje..." />
+                    <div class="Boton-send">
+                        <button type="button">
+                        <i class='bx bx-send icon'></i>
+                        </button>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+      
+
+    <section id="notificaciones" class="section">
+        <div class="text">Notificaciones</div>
+        <!-- Contenido de Reservaciones -->
+    </section>
+    
+    <section id="pedidos" class="section">
+        <div class="text">Haz tu Pedido</div>
+        <!-- Contenido de Reservaciones -->
+    </section>
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
